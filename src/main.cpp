@@ -36,8 +36,9 @@ public:
     }
     void update(float dt) {
         if (m_playLayer->getScale() > 1.0f) {
-            float cantidadX = (m_playLayer->getScaledContentSize().width / 2) / m_playLayer->getScale();
-            float cantidadY = (m_playLayer->getScaledContentSize().height / 2) / m_playLayer->getScale();
+	    // i put "(m_playLayer->getScaledContentSize().width / 2) / m_playLayer->getScale()" for fun xd
+            float cantidadX = m_playLayer->getContentSize().width / 2;
+            float cantidadY = m_playLayer->getContentSize().height / 2;
 
             posX = clamp(posX, -cantidadX, cantidadX);
             posY = clamp(posY, -cantidadY, cantidadY);
